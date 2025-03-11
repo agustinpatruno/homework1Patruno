@@ -3,7 +3,7 @@
 #include <limits>
 #include <fstream>
 using namespace std;
-
+//hola
 enum gravedad {DEBUG = 1 , INFO, WARNING, ERROR, CRITICAL};
 
 //2)
