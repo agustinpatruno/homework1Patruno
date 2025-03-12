@@ -73,6 +73,23 @@ int main()
  const char* texto1 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
  const char* texto2 = "Se requiere el código de una función recursiva qu compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
 
+ bool comparacion = comparar_textos(texto1,texto2);
+
+ if (comparacion)
+ {
+ cout << "ambos textos son iguales"<< endl;
+ }
+ else
+ {
+ cout << "los textos son distintos" << endl;
+ }
+
+ miprocesoAmedir(texto1,texto2,false);
+
+ miprocesoAmedir(texto1,texto2,true);
+
+ 
+ /*(opcional) una interfaz donde se le pide al usuaario que punto quiere probar su funcionamiento.
  int ejercicio = 0;
 
  cout << "que ejercicio quieres probar(poner numero) ?: "<< endl ;
@@ -144,5 +161,6 @@ int main()
             return 0;
         }
     }
+    */
  return 0;
 }

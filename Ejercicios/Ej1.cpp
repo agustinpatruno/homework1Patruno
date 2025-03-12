@@ -63,8 +63,15 @@ void imprimir_matriz(vector<vector<int>> matriz)
 
 int main()
 {
-    int valor;
+    int valor = 3;
 
+    vector<vector<int>> matriz = devolver_matriz(valor);
+
+    imprimir_matriz(matriz);
+    
+    return 0;
+
+    /*(opcional) es una interfaz donde se le pide al usuario con el tamaño de la matriz
     cout << "ingrese un numero: "<<endl;
     cin >> valor;
 
@@ -90,11 +97,6 @@ int main()
             return -1;
         }
     }
-
-    vector<vector<int>> matriz = devolver_matriz(valor);
-
-    imprimir_matriz(matriz);
+    */
     
-    return 0;
-
 }
