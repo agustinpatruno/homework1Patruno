@@ -46,7 +46,7 @@ void imprimir_matriz(vector<vector<int>> matriz)
        
         if (columnas == 0)
         {   
-            cant_filas= cant_filas-1;
+            cant_filas = cant_filas-1;
             columnas = matriz[cant_filas].size();
             
         }

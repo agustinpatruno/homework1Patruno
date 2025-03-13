@@ -20,7 +20,6 @@ struct linked_list
     shared_ptr<node> tail;
 };
 
-
 //i)///////////////////////////////////////////////////////////////////
 
 shared_ptr<node> create_node()
@@ -54,8 +53,6 @@ shared_ptr<linked_list> create_linked_list()
     lista -> tail = nullptr;
 
     lista -> cant_nodos = 0;
-
-    cout << "funcion bien la creacion" << endl; 
     
     return lista;
 
@@ -82,20 +79,18 @@ void push_front(shared_ptr<linked_list> lista, int dato)
     }
     else
     {
-        nuevo_nodo -> siguiente = lista -> head -> siguiente;
+        nuevo_nodo -> siguiente = lista -> head;
     }
 
     lista -> head = nuevo_nodo;
 
     lista -> cant_nodos++;
 
-    cout << "se añadio correctamente el nodo(push_front)" << endl;
-
     return;
 
 }
 
-//iii)////////////////////////////////////////////////
+//iii)////////////////////////////////////////////////////////////////////////
 
 void push_back(shared_ptr<linked_list> lista, int dato)
 {
@@ -123,8 +118,6 @@ void push_back(shared_ptr<linked_list> lista, int dato)
 
     lista -> cant_nodos++;
 
-    cout << "se añadio correctamente el nodo(push_back)" << endl;
-
     return;
 
 }
@@ -138,9 +131,9 @@ void insert(shared_ptr<linked_list> lista, int dato, int posicion)
         return;
     }
     
-    if (posicion > lista -> cant_nodos)
+    if (posicion > lista -> cant_nodos-1)
     {
-        cout << "error, la posicion es mayor que la cantidad de elementos. se insertar al final"<< endl;
+        cout << "error, la posicion es mayor que la cantidad de elementos. se insertara al final"<< endl;
 
         push_back(lista,dato);
 
@@ -183,11 +176,45 @@ void erase(shared_ptr<linked_list> lista, int posicion)
 
     shared_ptr<node> nodo_borrar;
 
+    int indice_final;
+
     if (posicion > lista -> cant_nodos)
     {
         cout << "error, la posicion es mayor que la cantidad de elementos. se borrar el nodo final"<< endl;
+        indice_final = lista -> cant_nodos;
+    }
+    else
+    {
+        indice_final = posicion-1;
+    }
+    
+    for (int i = 0; i < indice_final; i++)
+    {
+        temp = temp -> siguiente;
+    }
+    
+    if (indice_final == lista -> cant_nodos)
+    {
+        nodo_borrar = temp -> siguiente;
 
-        while (temp -> siguiente -> siguiente != nullptr)
+        temp -> siguiente = nullptr;
+    }
+    else
+    {
+        nodo_borrar = temp -> siguiente;
+
+        temp -> siguiente = nodo_borrar -> siguiente;
+    }
+    
+    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor << endl;
+
+    lista -> cant_nodos--;
+
+    /*if (posicion > lista -> cant_nodos)
+    {
+        cout << "error, la posicion es mayor que la cantidad de elementos. se borrar el nodo final"<< endl;
+
+        for (int i = 0; i < lista -> cant_nodos; i++)
         {
             temp = temp -> siguiente;
         }
@@ -199,7 +226,7 @@ void erase(shared_ptr<linked_list> lista, int posicion)
     }
     else
     {
-        for (int i = 0; i < posicion; i++)
+        for (int i = 0; i < posicion-1; i++)
         {
             temp = temp -> siguiente;
         }
@@ -209,10 +236,7 @@ void erase(shared_ptr<linked_list> lista, int posicion)
         temp -> siguiente = nodo_borrar -> siguiente;
 
     }
-
-    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor << endl;
-
-    lista -> cant_nodos--;
+    */
 
     return;
 
@@ -232,16 +256,15 @@ void printlist(shared_ptr<linked_list> lista)
     
     shared_ptr<node> temp = lista -> head;
 
-    int contador = 0;
-
-    for (int i = 0; i < lista -> cant_nodos-1; i++)
+    for (int i = 0; i < lista -> cant_nodos; i++)
     {
-        cout << "->"<< temp->valor << endl;
+        cout << "->" << temp->valor ;
 
         temp = temp -> siguiente;
-
-        contador ++;
     }
+
+    cout << endl ;
+    
     return;
 
 }
@@ -251,6 +274,7 @@ void printlist(shared_ptr<linked_list> lista)
 int main()
 {
     //creacion de un nodo
+
     shared_ptr<node> nuevo = create_node();
 
     nuevo -> valor = 2;
@@ -266,22 +290,15 @@ int main()
         push_back(nueva_lista, i);
     }
 
-    cout << "cant " << nueva_lista -> cant_nodos << endl;
-    
-    push_front(nueva_lista,11);
+    insert(nueva_lista,12,4);
 
-    cout << "cant " <<nueva_lista -> cant_nodos << endl;
-
-    insert(nueva_lista,12,10);
-
-    cout << "cant " << nueva_lista -> cant_nodos << endl;
-
+    printlist(nueva_lista);
 
     erase(nueva_lista,7);
 
     printlist(nueva_lista);
 
-    cout << nueva_lista -> cant_nodos << endl;
+    cout <<  "cantidad final de nodos: "<< nueva_lista -> cant_nodos << endl;
 
     return 0;
 }
