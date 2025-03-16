@@ -17,6 +17,7 @@ vector<vector<int>> devolver_matriz(int n)
         for (int j = 0; j < n; j++)
         {
             matriz[i][j] = valor;
+
             valor+=1;
         }
     }
@@ -31,7 +32,8 @@ void imprimir_matriz(vector<vector<int>> matriz)
 {
     if (matriz.empty())
     {
-        cout << "la matriz esta vacia" << endl ;
+        cout << "la matriz esta vacia" << endl;
+
         return;
     } 
 
@@ -43,21 +45,20 @@ void imprimir_matriz(vector<vector<int>> matriz)
 
     while(cant_filas>0)
     {
-       
         if (columnas == 0)
         {   
             cant_filas = cant_filas-1;
+
             columnas = matriz[cant_filas].size();
             
         }
         else
         {
             cout << "fila: " << cant_filas << " columna: "<< columnas <<" valor: " <<matriz[cant_filas-1][columnas-1] << endl;
+            
             columnas-=1 ; 
         }
-        
     }
-
     return;
 }
 

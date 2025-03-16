@@ -10,13 +10,16 @@ using namespace std;
 struct node
 {
     int valor;
+
     shared_ptr<node> siguiente;
 };
 
 struct linked_list
 {
     int cant_nodos;
+
     shared_ptr<node> head;
+
     shared_ptr<node> tail;
 };
 
@@ -25,9 +28,9 @@ struct linked_list
 shared_ptr<node> create_node()
 {
    try
-   {
+    {
         return make_shared<node>();
-   }
+    }
    catch(const std::exception& e)
     {
         cerr << "error, no se pudo crear el nodo\n"<< endl;
@@ -162,7 +165,7 @@ void insert(shared_ptr<linked_list> lista, int dato, int posicion)
     return;
 }
 
-//v)////////////////////////////////////////////
+//v)////////////////////////////////////////////////////////
 
 void erase(shared_ptr<linked_list> lista, int posicion)
 {
@@ -181,6 +184,7 @@ void erase(shared_ptr<linked_list> lista, int posicion)
     if (posicion > lista -> cant_nodos)
     {
         cout << "error, la posicion es mayor que la cantidad de elementos. se borrar el nodo final"<< endl;
+
         indice_final = lista -> cant_nodos;
     }
     else
@@ -193,16 +197,14 @@ void erase(shared_ptr<linked_list> lista, int posicion)
         temp = temp -> siguiente;
     }
     
+    nodo_borrar = temp -> siguiente;
+
     if (indice_final == lista -> cant_nodos)
     {
-        nodo_borrar = temp -> siguiente;
-
         temp -> siguiente = nullptr;
     }
     else
     {
-        nodo_borrar = temp -> siguiente;
-
         temp -> siguiente = nodo_borrar -> siguiente;
     }
     
@@ -210,39 +212,11 @@ void erase(shared_ptr<linked_list> lista, int posicion)
 
     lista -> cant_nodos--;
 
-    /*if (posicion > lista -> cant_nodos)
-    {
-        cout << "error, la posicion es mayor que la cantidad de elementos. se borrar el nodo final"<< endl;
-
-        for (int i = 0; i < lista -> cant_nodos; i++)
-        {
-            temp = temp -> siguiente;
-        }
-        
-        nodo_borrar = temp -> siguiente;
-
-        temp -> siguiente = nullptr;
-
-    }
-    else
-    {
-        for (int i = 0; i < posicion-1; i++)
-        {
-            temp = temp -> siguiente;
-        }
-
-        nodo_borrar = temp -> siguiente;
-
-        temp -> siguiente = nodo_borrar -> siguiente;
-
-    }
-    */
-
     return;
 
 }
 
-//vi)///////////////////////////////////////
+//vi)/////////////////////////////////////////////////////////////////////
 
 void printlist(shared_ptr<linked_list> lista)
 {
@@ -258,12 +232,12 @@ void printlist(shared_ptr<linked_list> lista)
 
     for (int i = 0; i < lista -> cant_nodos; i++)
     {
-        cout << "->" << temp->valor ;
+        cout << "->" << temp->valor;
 
         temp = temp -> siguiente;
     }
 
-    cout << endl ;
+    cout << endl;
     
     return;
 

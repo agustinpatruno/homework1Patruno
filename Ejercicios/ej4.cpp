@@ -17,7 +17,7 @@ constexpr bool comparar_textos(const char* texto1,const char* texto2)
     {
         return false;
     }
-    else if (texto1[0] == '\0' && texto2[0]== '\0')
+    else if (texto1[0] == '\0' && texto2[0] == '\0')
     {
         return true;
     }
@@ -50,18 +50,27 @@ bool comparar_textos_ejecucion(const char* texto1,const char* texto2)
 void miprocesoAmedir(const char* texto1, const char* texto2, bool comparar)
 {
     auto startTime = chrono::high_resolution_clock::now(); 
+
     comparar_textos(texto1,texto2);
+
     auto endTime = chrono::high_resolution_clock::now(); 
+
     auto elapsedTime1 = std::chrono::duration_cast<chrono::nanoseconds>( endTime - startTime); 
+
     cout << "A miProcesoAMedir le tomó: " << elapsedTime1.count() << " nanosegundos ejecutar en tiempos de compilacion" << endl; 
+
 
     if (comparar)
     {
         auto startTime = chrono::high_resolution_clock::now(); 
+
         comparar_textos_ejecucion(texto1,texto2);
+
         auto endTime = chrono::high_resolution_clock::now(); 
+
         auto elapsedTime2 = std::chrono::duration_cast<chrono::nanoseconds>( endTime - startTime); 
-        cout << "A miProcesoAMedir le tomó: " << elapsedTime2.count() << " nanosegundos ejecutar normalmente" << endl; 
+
+        cout << "A miProcesoAMedir2 le tomó: " << elapsedTime2.count() << " nanosegundos ejecutar normalmente" << endl; 
 
         cout << "la diferencia de tiempo es de:"<< elapsedTime1.count()-elapsedTime2.count()<< "nanosegundo." << endl;
     }
@@ -71,25 +80,27 @@ void miprocesoAmedir(const char* texto1, const char* texto2, bool comparar)
 int main()
 {
  const char* texto1 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
+
  const char* texto2 = "Se requiere el código de una función recursiva qu compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
 
  bool comparacion = comparar_textos(texto1,texto2);
 
  if (comparacion)
  {
- cout << "ambos textos son iguales"<< endl;
+    cout << "ambos textos son iguales"<< endl;
  }
  else
  {
- cout << "los textos son distintos" << endl;
+    cout << "los textos son distintos" << endl;
  }
 
  miprocesoAmedir(texto1,texto2,false);
 
  miprocesoAmedir(texto1,texto2,true);
 
- 
- /*(opcional) una interfaz donde se le pide al usuaario que punto quiere probar su funcionamiento.
+ return 0;
+
+ /*(opcional) una interfaz donde se le pide al usuario que punto quiere probar su funcionamiento.
  int ejercicio = 0;
 
  cout << "que ejercicio quieres probar(poner numero) ?: "<< endl ;
@@ -162,5 +173,4 @@ int main()
         }
     }
     */
- return 0;
 }

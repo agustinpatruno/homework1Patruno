@@ -229,16 +229,15 @@ void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario)
 
 //iv)
 
-
 int error_en_runtime()
 {
     try
     {
-        int denominador = 20;
+        int denominador = 0;
 
-        int numerador = 0;
+        int numerador = 20;
 
-        if (numerador == 0)
+        if (denominador == 0)
         {
             throw runtime_error("error,hubo un problema en una division por cero");
         }
@@ -260,20 +259,35 @@ int main()
 {
 
     logMessage("Hubo un problema de sintaxis",gravedad(1));
+
     logMessage("se añadieron nuevas librerias",gravedad(2));
+
     logMessage("segmentacion fault",gravedad(3));
+
     logMessage("Segmentation fault (core dumped)",gravedad(4));
+
     logMessage("killed",gravedad(5));
 
+
+
     string nombre_archivo = "datos.cpp";
+
     string mensaje_error = "[ERROR] División por cero detectada ";
+
     int linea= 21;
+
     logMessage(mensaje_error, nombre_archivo, linea);
 
+
+
     string msj_acceso=  "Access Granted";
+
     string nombre= "Agustinpatruno";
+
     logMessage(msj_acceso,nombre);
 
+
+    
     error_en_runtime();
     
     return 0;
