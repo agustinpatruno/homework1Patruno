@@ -73,7 +73,7 @@ int main()
     
     return 0;
 
-    /*(opcional) es una interfaz donde se le pide al usuario con el tamaño de la matriz
+    /*(opcional) es una interfaz donde se le pide al usuario el tamaño de la matriz
     cout << "ingrese un numero: "<<endl;
     cin >> valor;
 

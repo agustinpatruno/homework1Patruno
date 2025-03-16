@@ -25,7 +25,7 @@ struct linked_list
 
 //i)///////////////////////////////////////////////////////////////////
 
-shared_ptr<node> create_node()
+shared_ptr<node> create_node(void)
 {
    try
     {
@@ -40,9 +40,9 @@ shared_ptr<node> create_node()
 
 }
 
-////////////////////////////////////////creo la linked list vacia//////////////////////////////////////////////////////////////////////
+//////////creo la linked list vacia/////////////////
 
-shared_ptr<linked_list> create_linked_list()
+shared_ptr<linked_list> create_linked_list(void)
 {
     shared_ptr<linked_list> lista = make_shared<linked_list>();
 

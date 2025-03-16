@@ -10,7 +10,7 @@ enum gravedad {DEBUG = 1 , INFO, WARNING, ERROR, CRITICAL};
 
 ///////////////////////////////////////////////////funciones adicionales////////////////////////////////////////////////////////////////
 
-int evento()
+int evento(void)
 {
     int importancia;
 
@@ -137,7 +137,7 @@ void logMessage(string mensaje, gravedad NivelSeveridad)
 ///////////////////////////////////////////////////b)/////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////funciones adicionales////////////////////////////////
-int linea_de_codigo()
+int linea_de_codigo(void)
 {
     int linea;
 
@@ -229,7 +229,7 @@ void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario)
 
 //iv)
 
-int error_en_runtime()
+int error_en_runtime(void)
 {
     try
     {
