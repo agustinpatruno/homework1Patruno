@@ -1,3 +1,4 @@
+//#include <ej1.h>
 #include <iostream>
 #include <vector>
 #include <limits>
@@ -39,18 +40,18 @@ void imprimir_matriz(vector<vector<int>> matriz)
 
     int cant_filas = matriz.size();
 
-    int cant_columnas= matriz[0].size();
+    int columnas = matriz[0].size();
 
-    int columnas = cant_columnas;
+    cout << cant_filas << columnas << endl;
 
-    while(cant_filas>0)
+    for (size_t i = 0; i < matriz.size()*matriz[0].size()+matriz.size()-1; i++) 
     {
+
         if (columnas == 0)
         {   
             cant_filas = cant_filas-1;
 
             columnas = matriz[cant_filas].size();
-            
         }
         else
         {
@@ -64,7 +65,7 @@ void imprimir_matriz(vector<vector<int>> matriz)
 
 int main()
 {
-    int valor = 3;
+    int valor = 5;
 
     vector<vector<int>> matriz = devolver_matriz(valor);
 
