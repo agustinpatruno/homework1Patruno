@@ -9,7 +9,7 @@ using namespace std;
 /*
 input: const char* texto1, const char* texto2
 ouput: bool
-explicacion: es una funcion recursiva que compara si 2 cadenas de texto son iguales o no
+explicacion: funcion recursiva que compara si 2 cadenas de texto son iguales o no
 (true si lo son, false en caso contrario). Ademas con constexpr se ejecuta en tiempos de compilacion
 
 */
@@ -19,7 +19,7 @@ constexpr bool comparar_textos(const char* texto1,const char* texto2);
 /*
 input: const char* texto1, const char* texto2
 ouput: bool
-explicacion: es una funcion recursiva que compara si 2 cadenas de texto son iguales o no
+explicacion: funcion recursiva que compara si 2 cadenas de texto son iguales o no
 (true si lo son, false en caso contrario)
 
 */

@@ -11,7 +11,7 @@ using namespace std;
 en tiempos de compilacion necesito que sus parametros sean de tipo literal(int, bool, char) y en el caso de string, es una clase 
 mas compleja que no esta incluida en estos tipos literales.*/
 
-constexpr bool comparar_textos(const char* texto1,const char* texto2)
+constexpr bool comparar_textos_ejecucion(const char* texto1,const char* texto2)
 {
     if (texto1[0] != texto2[0])
     {
@@ -23,13 +23,13 @@ constexpr bool comparar_textos(const char* texto1,const char* texto2)
     }
     else
     {
-        return comparar_textos(texto1+1,texto2+1);
+        return comparar_textos_ejecucion(texto1+1,texto2+1);
     }
 }
 
 //c)///////////////////////////////////////////////////////
 
-bool comparar_textos_ejecucion(const char* texto1,const char* texto2)
+bool comparar_textos(const char* texto1,const char* texto2)
 {
     if (texto1[0] != texto2[0])
     {
@@ -47,42 +47,52 @@ bool comparar_textos_ejecucion(const char* texto1,const char* texto2)
 
 //b)/////////////////////////////////////////////////////////////////
 
-void miprocesoAmedir(const char* texto1, const char* texto2, bool comparar)
+void miprocesoAmedir_normal(const char* texto1, const char* texto2)
 {
     auto startTime = chrono::high_resolution_clock::now(); 
 
-    comparar_textos(texto1,texto2);
+    bool result = comparar_textos(texto1,texto2);
 
     auto endTime = chrono::high_resolution_clock::now(); 
 
+    cout << result << endl;
+
     auto elapsedTime1 = std::chrono::duration_cast<chrono::nanoseconds>( endTime - startTime); 
 
-    cout << "A miProcesoAMedir le tomó: " << elapsedTime1.count() << " nanosegundos ejecutar en tiempos de compilacion" << endl; 
+    cout << "A miProcesoAMedir le tomó: " << elapsedTime1.count() << " nanosegundos ejecutarlo normalmente" << endl; 
 
-
-    if (comparar)
-    {
-        auto startTime = chrono::high_resolution_clock::now(); 
-
-        comparar_textos_ejecucion(texto1,texto2);
-
-        auto endTime = chrono::high_resolution_clock::now(); 
-
-        auto elapsedTime2 = std::chrono::duration_cast<chrono::nanoseconds>( endTime - startTime); 
-
-        cout << "A miProcesoAMedir2 le tomó: " << elapsedTime2.count() << " nanosegundos ejecutar normalmente" << endl; 
-
-        cout << "la diferencia de tiempo es de:"<< elapsedTime1.count()-elapsedTime2.count()<< "nanosegundo." << endl;
-    }
     return;
+}
+
+void miprocesoAmedir_ejecucion()
+{
+
+ constexpr const char* texto1 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
+
+ constexpr const char* texto2 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
+
+    auto startTime = chrono::high_resolution_clock::now(); 
+
+    constexpr bool result = comparar_textos_ejecucion(texto1,texto2);
+
+    auto endTime = chrono::high_resolution_clock::now(); 
+
+    cout << result << endl;
+
+    auto elapsedTime2 = std::chrono::duration_cast<chrono::nanoseconds>( endTime - startTime); 
+
+    cout << "A miProcesoAMedir le tomó: " << elapsedTime2.count() << " nanosegundos ejecutar en tiempos de compilacion" << endl; 
+
+    return;
+
 }
 
 int main()
 {
  const char* texto1 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
 
- const char* texto2 = "Se requiere el código de una función recursiva qu compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
-
+ const char* texto2 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";
+ 
  bool comparacion = comparar_textos(texto1,texto2);
 
  if (comparacion)
@@ -94,9 +104,9 @@ int main()
     cout << "los textos son distintos" << endl;
  }
 
- miprocesoAmedir(texto1,texto2,false);
+ miprocesoAmedir_normal(texto1,texto2);
 
- miprocesoAmedir(texto1,texto2,true);
+ miprocesoAmedir_ejecucion();
 
  return 0;
 
