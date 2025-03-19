@@ -1,9 +1,4 @@
-#include <iostream>
-#include <string>
-#include <limits>
-#include <fstream>
-#include <chrono> 
-using namespace std;
+#include <ej4.hpp>
 
 //4)
 //a)

@@ -4,7 +4,6 @@
 #include <fstream>
 #include <memory>
 using namespace std;
-
 //structs del node y de la linked list//
 
 struct node
@@ -23,8 +22,6 @@ struct linked_list
     shared_ptr<node> tail;
 };
 
-//funciones auxiliares que crea el node y la linked_list//
-
 
 /*
 input: void
@@ -32,7 +29,8 @@ ouput: shared_ptr<node>
 explicacion: crea un node y lo guarda en una variable con un shared pointer. Lueego lo retorna
 
 */
-shared_ptr<node> create_node(void);
+shared_ptr<node> create_node();
+
 
 /*
 input: void
@@ -41,7 +39,7 @@ explicacion: crea una linked_list en una variable con shared_ptr con su head y t
 su tamaño en cero. luego lo  retorna
 
 */
-shared_ptr<linked_list> create_linked_list(void);
+shared_ptr<linked_list> create_linked_list();
 
 
 /*

@@ -1,10 +1,4 @@
-#include <iostream>
-#include <string>
-#include <limits>
-#include <fstream>
-using namespace std;
-//hola
-enum gravedad {DEBUG = 1 , INFO, WARNING, ERROR, CRITICAL};
+#include <ej2.hpp>
 
 //2)
 

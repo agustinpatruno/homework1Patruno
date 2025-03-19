@@ -1,27 +1,4 @@
-#include <iostream>
-#include <string>
-#include <limits>
-#include <fstream>
-#include <memory>
-using namespace std;
-
-//////////////////////////////////////////////structs del node y de la linked list///////////////////////////////////////////////////
-
-struct node
-{
-    int valor;
-
-    shared_ptr<node> siguiente;
-};
-
-struct linked_list
-{
-    int cant_nodos;
-
-    shared_ptr<node> head;
-
-    shared_ptr<node> tail;
-};
+#include <ej3.hpp>
 
 //i)///////////////////////////////////////////////////////////////////
 

@@ -1,8 +1,4 @@
-//#include <ej1.h>
-#include <iostream>
-#include <vector>
-#include <limits>
-using namespace std;
+#include <ej1.hpp>
 
 //1)
 //a)
