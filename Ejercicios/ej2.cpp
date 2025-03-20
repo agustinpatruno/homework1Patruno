@@ -249,6 +249,13 @@ int error_en_runtime(void)
 
 }
 
+/*
+compilacion del ejercicio 2:
+
+  make ej2
+
+*/
+
 int main()
 {
 

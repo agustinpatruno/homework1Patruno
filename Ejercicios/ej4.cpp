@@ -82,6 +82,13 @@ void miprocesoAmedir_ejecucion()
 
 }
 
+
+/*
+compilacion del ejercicio 4:
+
+    make ej4
+*/
+
 int main()
 {
  const char* texto1 = "Se requiere el código de una función recursiva que compare dos variables que contengan texto e indique mediante una variable bool si son iguales";

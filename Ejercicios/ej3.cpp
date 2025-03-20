@@ -222,6 +222,13 @@ void printlist(shared_ptr<linked_list> lista)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+/*
+compilacion del ejercicio 3:
+
+    make ej3
+
+*/
 int main()
 {
     //creacion de un nodo

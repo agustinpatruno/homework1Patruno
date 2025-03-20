@@ -57,6 +57,12 @@ void imprimir_matriz(vector<vector<int>> matriz)
     return;
 }
 
+/*
+ejecutar el ejercicio 1 con makefile:
+
+    make ej1
+
+*/
 int main()
 {
     int valor = 3;
