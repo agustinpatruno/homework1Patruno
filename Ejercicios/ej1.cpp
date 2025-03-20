@@ -70,6 +70,8 @@ int main()
     vector<vector<int>> matriz = devolver_matriz(valor);
 
     imprimir_matriz(matriz);
+
+    cout << "tamaño de la matrizcuadrada :" << 3*3 << endl;
     
     return 0;
 

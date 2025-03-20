@@ -99,7 +99,7 @@ int main()
 
  if (comparacion)
  {
-    cout << "ambos textos son iguales"<< endl;
+    cout << "ambos textos son iguales(ejecucion normal)"<< endl;
  }
  else
  {

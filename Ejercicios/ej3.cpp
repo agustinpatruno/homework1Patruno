@@ -137,7 +137,7 @@ void insert(shared_ptr<linked_list> lista, int dato, int posicion)
 
     lista -> cant_nodos++;
 
-    cout << "se añadio correctamente el nodo"<< endl;
+    cout << "se añadio correctamente el nodo con el valor: "<< dato <<" en la posicion: "<<posicion << endl;
 
     return;
 }
@@ -185,7 +185,7 @@ void erase(shared_ptr<linked_list> lista, int posicion)
         temp -> siguiente = nodo_borrar -> siguiente;
     }
     
-    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor<<" enla posicion : "<< posicion << endl;
+    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor<<" en la posicion : "<< posicion << endl;
 
     lista -> cant_nodos--;
 
@@ -247,6 +247,8 @@ int main()
     {
         push_back(nueva_lista, i);
     }
+
+    printlist(nueva_lista);
 
     insert(nueva_lista,12,4);
 

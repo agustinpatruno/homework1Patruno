@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 
-TARGET_EJ1 = ej1
+TARGET_EJ1 = ejecutable1
 TARGET_EJ2 = ejecutable2
 TARGET_EJ3 = ejecutable3
 TARGET_EJ4 = ejecutable4
