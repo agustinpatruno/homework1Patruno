@@ -10,18 +10,21 @@ TARGET_EJ4 = ejecutable4
 all: ej1 ej2 ej3 ej4
 
 ej1: ej1.cpp ej1.hpp
-    $(CXX) $(CXXFLAGS) -o $(TARGET_EJ1) ej1.cpp
-    ./$(TARGET_EJ1)
+	$(CXX) $(CXXFLAGS) -o $(TARGET_EJ1) ej1.cpp
+	./$(TARGET_EJ1)
 
 ej2: ej2.cpp
-    $(CXX) $(CXXFLAGS) -o $(TARGET_EJ2) ej2.cpp
+	$(CXX) $(CXXFLAGS) -o $(TARGET_EJ2) ej2.cpp
+	./$(TARGET_EJ2)
 
 ej3: ej3.cpp
-    $(CXX) $(CXXFLAGS) -o $(TARGET_EJ3) ej3.cpp
+	$(CXX) $(CXXFLAGS) -o $(TARGET_EJ3) ej3.cpp
+	./$(TARGET_EJ3)
 
 ej4: ej4.cpp
-    $(CXX) $(CXXFLAGS) -o $(TARGET_EJ4) ej4.cpp
+	$(CXX) $(CXXFLAGS) -o $(TARGET_EJ4) ej4.cpp
+	./$(TARGET_EJ4)
 
 # Limpieza
 clean:
-    rm -f ej1 ejecutable2 ejecutable3 ejecutable4
+	rm -f ej1 ejecutable2 ejecutable3 ejecutable4

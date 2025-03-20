@@ -1,0 +1,9 @@
+[DEBUG]<Hubo un problema de sintaxis>
+[INFO]<se añadieron nuevas librerias>
+[WARNING]<segmentacion fault>
+[ERROR]<Segmentation fault (core dumped)>
+[CRITICAL]<killed>
+mensaje de error:<[ERROR] División por cero detectada >. archivo:<datos.cpp>. linea:<21>
+[SECURITY]< Mensaje de acceso:Access Granted >< Nombre del ususario:Agustinpatruno >
+
+[ERROR]<error,hubo un problema en una division por cero>
