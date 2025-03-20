@@ -6,8 +6,10 @@ using namespace std;
 /*
 inputs: int n
 ouput: vector<vector<int>>
-explicacion: crea una matriz cuadrada de nxn donde en los valores son acendentes
-
+explicacion: crea una matriz cuadrada de nxn donde los valores son acendentes
+[1,2,...,10]
+[11,...,20]
+...
 */
 vector<vector<int>> devolver_matriz(int n);
 
