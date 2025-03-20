@@ -1,4 +1,4 @@
-#include <ej3.hpp>
+#include "ej3.hpp"
 
 //i)///////////////////////////////////////////////////////////////////
 
@@ -185,7 +185,7 @@ void erase(shared_ptr<linked_list> lista, int posicion)
         temp -> siguiente = nodo_borrar -> siguiente;
     }
     
-    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor << endl;
+    cout << " se borro correctamente el nodo, valor :" << nodo_borrar -> valor<<" enla posicion : "<< posicion << endl;
 
     lista -> cant_nodos--;
 
@@ -230,7 +230,7 @@ int main()
 
     nuevo -> valor = 2;
 
-    cout << nuevo -> valor << endl;
+    cout << "el valor del node creado es :"<<nuevo -> valor << endl;
 
     //creacion de una lista enlazada, le añado elementos y los imprimo con printlist
 
