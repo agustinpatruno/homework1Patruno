@@ -71,7 +71,7 @@ int main()
 
     imprimir_matriz(matriz);
 
-    cout << "tamaño de la matrizcuadrada :" << 3*3 << endl;
+    cout << "tamaño de la matriz cuadrada :" << 3*3 << endl;
     
     return 0;
 
